@@ -2,7 +2,10 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 
 //connection a la base de donnne 
-mongoose.connect(process.env.MBEDB_URI)
+mongoose.connect(process.env.MBEDB_URI,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 .then(res =>{
     console.log("la base de donne est bien  connecter!");
     
